@@ -6,7 +6,7 @@ import sys
 import rospy
 import signal
 import numpy as np
-from std_msgs.msg import Float32MultiArray
+from ros_linetracking_pub.msg import linetracking_data
 
 def signal_handler(signal, frame): # ctrl + c -> exit program
         print('You pressed Ctrl+C!')
@@ -16,11 +16,12 @@ signal.signal(signal.SIGINT, signal_handler)
 class linetracking():
     def __init__(self):
         rospy.init_node('linetracking', anonymous=True)
-        self.pub = rospy.Publisher('/line_dists',Float32MultiArray, queue_size=1)
+        self.pub = rospy.Publisher('/line_dists',linetracking_data, queue_size=1)
         self.r = rospy.Rate(10) # 10Hz
 
     def data_sender(self,readings):
-        msg = Float32MultiArray()
+        msg = linetracking_data()
+	print(msg)
         msg.data=readings
 	print(msg.data)
         self.pub.publish(msg)
@@ -43,9 +44,10 @@ try :
 	L13 =GPIO.input(22)
 	L14 =GPIO.input(5)
 	L15 =GPIO.input(6)
-	L1 = np.array([1,L11,L12,L13,L14,L15]) 
-
-	sensor.data_sender(L1)
+	mess = linetracking_data()
+	mess.lt_data = np.array([L11,L12,L13,L14,L15]) 
+	print(mess)
+	sensor.data_sender(mess)
 
 	sensor.r.sleep()
 	

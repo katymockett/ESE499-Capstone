@@ -6,10 +6,10 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(central)
-subdirs(ros_i2cpwmboard_sub)
+subdirs(ROS_gps_pub)
 subdirs(ros_imu_pub)
 subdirs(line_tracking_pub)
-subdirs(ROS_gps_pub)
+subdirs(ros_pwm_sub)
 subdirs(raspicam_node)
 subdirs(rplidar_ros)
 subdirs(ultrasonic)

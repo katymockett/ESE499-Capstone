@@ -6,6 +6,7 @@ import sys
 import rospy
 import signal
 from std_msgs.msg import String
+from ros_gps_pub.msg import gps
 
 def signal_handler(signal, frame): # ctrl + c -> exit program
         print('You pressed Ctrl+C!')
@@ -15,11 +16,11 @@ signal.signal(signal.SIGINT, signal_handler)
 class gps():
     def __init__(self):
         rospy.init_node('gps', anonymous=True)
-        self.pub = rospy.Publisher('/gps_readings',Float32, queue_size=1)
+        self.pub = rospy.Publisher('/gps_readings',gps, queue_size=1)
         self.r = rospy.Rate(10) # 10Hz
 
     def data_sender(self,readings):
-        msg = String()
+        msg = gps()
         msg.data=readings
 	print(msg.data)
         self.pub.publish(msg)

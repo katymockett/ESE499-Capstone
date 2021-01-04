@@ -1,2 +1,2 @@
-ROS_gps_pub:central:line_tracking_pub:raspicam_node:ros_i2cpwmboard_sub:ros_imu_pub:rplidar_ros:ultrasonic
+ROS_gps_pub:central:line_tracking_pub:raspicam_node:ros_imu_pub:ros_pwm_sub:rplidar_ros:ultrasonic
 -DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -G Unix Makefiles

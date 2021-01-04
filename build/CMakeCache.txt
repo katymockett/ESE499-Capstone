@@ -446,6 +446,9 @@ message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for messsage_generation.
+messsage_generation_DIR:PATH=messsage_generation_DIR-NOTFOUND
+
 //Path to a library.
 mmal_LIBS:FILEPATH=/opt/vc/lib/libmmal.so
 
@@ -499,6 +502,24 @@ ros_i2cpwm_board_sub_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/ros_i2cpwmbo
 
 //Value Computed by CMake
 ros_i2cpwm_board_sub_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/ros_i2cpwmboard_sub
+
+//Value Computed by CMake
+ros_imu_pub_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/ros_imu_pub
+
+//Value Computed by CMake
+ros_imu_pub_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/ros_imu_pub
+
+//Value Computed by CMake
+ros_linetracking_pub_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/line_tracking_pub
+
+//Value Computed by CMake
+ros_linetracking_pub_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/line_tracking_pub
+
+//Value Computed by CMake
+ros_pwm_sub_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/ros_pwm_sub
+
+//Value Computed by CMake
+ros_pwm_sub_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/ros_pwm_sub
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake

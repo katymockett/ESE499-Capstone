@@ -7,8 +7,11 @@ from std_msgs.msg import Float32
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from sensor_msgs.msg import LaserScan
-from i2cpwm_board.msg import Servo
-from i2cpwm_board.msg import ServoArray
+from ros_pwm_sub.msg import Servo
+from ros_pwm_sub.msg import ServoArray
+from ros_gps_pub.msg import gps_data
+from ros_imu_pub.msg import imu_data
+from ros_linetracking_pub.msg import linetracking_data
 
 def callback(data):
 	rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
@@ -21,15 +24,15 @@ def central():
 	
 	# read from line tracking
 	print("Subscribing to /line_dists")
-	sub1 = rospy.Subscriber("/line_dists", Float32MultiArray,callback)
+	sub1 = rospy.Subscriber("/line_dists", linetracking_data,callback)
 	
 	# read from gps
 	print("Subscribing to /gps_readings")
-	sub2 = rospy.Subscriber('/gps_readings',String,callback)
+	sub2 = rospy.Subscriber('/gps_readings',gps_data,callback)
 
 	# read from imu
 	print("Subscribing to /imu_data")
-	sub3 = rospy.Subscriber('/imu_data',Float32MultiArray,callback)
+	sub3 = rospy.Subscriber('/imu_data',imu_data,callback)
 
 	# read from camera
 	print("Subscribing to /raspicam_node/image")
