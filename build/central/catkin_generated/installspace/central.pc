@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws/install
+
+Name: central
+Description: Description of central
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

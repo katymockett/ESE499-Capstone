@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws/devel
+
+Name: publisher_ex
+Description: Description of publisher_ex
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
